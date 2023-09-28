@@ -1,0 +1,10 @@
+[Unit]
+Description=RSSGrabber timer
+
+[Timer]
+OnUnitActiveSec=30min
+
+
+[Install]
+WantedBy=multi-user.target
+

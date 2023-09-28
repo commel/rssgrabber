@@ -1,0 +1,15 @@
+[Unit]
+Description=Drueckblick Feeds
+
+[Service]
+Type=oneshot
+User=drueckblick
+Group=drueckblick
+PrivateTmp=true
+WorkingDirectory=/home/drueckblick/rssgrabber/
+ExecStartPre=/home/drueckblick/rssgrabber/update-feeds.sh
+ExecStart=/opt/jdk11/bin/java -Xms64m -Xmx64m -jar rssgrabber.jar
+Slice=website.slice
+
+[Install]
+WantedBy=multi-user.target
